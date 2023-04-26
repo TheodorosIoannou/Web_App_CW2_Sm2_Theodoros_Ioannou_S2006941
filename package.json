@@ -1,0 +1,28 @@
+{
+  "name": "web_app_cw2_sm2_theodoros_ioannou_s2006941",
+  "version": "1.0.0",
+  "description": "Web App CW2 Submission 2\r Author: Theodoros Ioannou\r Student ID: S2006941",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheodorosIoannou/Web_App_CW2_Sm2_Theodoros_Ioannou_S2006941.git"
+  },
+  "author": "Theodoros Ioannou",
+  "keywords": [
+    "node.js",
+    "express"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheodorosIoannou/Web_App_CW2_Sm2_Theodoros_Ioannou_S2006941/issues"
+  },
+  "homepage": "https://github.com/TheodorosIoannou/Web_App_CW2_Sm2_Theodoros_Ioannou_S2006941#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mustache": "^4.2.0",
+    "nedb": "^1.8.0"
+  }
+}
