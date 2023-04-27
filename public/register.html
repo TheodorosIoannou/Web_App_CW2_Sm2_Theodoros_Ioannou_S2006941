@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Log In</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #7DD601;
+            height: 10%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 0%;
+        }
+
+        .logo {
+            height: 80%;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 25%;
+            margin-right: 10%
+        }
+
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10%;
+        }
+
+        .about-section {
+            margin-top: 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 50%;
+        }
+
+        .about-text {
+            margin-top: 3%;
+            text-align: left;
+            font-size: 120%;
+            color: white;
+            padding: 1%;
+
+        }
+
+        .title {
+            background-color: #457700;
+            color: white;
+            padding: 2%;
+            margin: 0%;
+
+        }
+
+        p.about-text {
+            padding: 0%;
+            margin-left: 1%;
+        }
+
+        .about-box {
+            color: white;
+            background-color: #7DD601;
+            border: 1px solid #ccc;
+            margin: 5%;
+            padding: 0%;
+            margin-left: 10%;
+            margin-right: 10%;
+            text-align: center;
+        }
+
+        button {
+            background-color: #457700;
+            color: white;
+          
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="logo.jpg" alt="logo">
+            <nav class="nav">
+                <a href="/aboutUs">Wellness Web App</a>
+            </nav>
+        </div>
+        <nav class="nav">
+            <a href="/aboutUs">About</a>
+            <a href="/register">Register</a>
+            <a href="/login">Login</a>
+        </nav>
+    </header>
+    <section class="about-section">
+        <img src="/images/wellness.jpg" alt="about">
+        <a>
+            <p class="about-text"></p>
+            <div class="about-box">
+                <h2 class="title">Register</h2>
+                </p>
+                <form method="post" action="login.php">
+                    <label for="email">Email</label>
+                    <input type="text" id="eamil" name="email" required><br><br>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required><br><br>
+                    <button type="submit" value="create account">Create an account</button>
+                </form>
+                </p>
+            </div>
+        </a>
+    </section>
+</body>
+
+</html>
