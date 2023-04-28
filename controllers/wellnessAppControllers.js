@@ -1,7 +1,6 @@
 
 const wellnessAppDAO = require('../models/wellnessApp');
 const db = new wellnessAppDAO();
-
 db.init();
 
 exports.entries_list = function(req, res) {
@@ -9,7 +8,11 @@ exports.entries_list = function(req, res) {
     db.getAllEntries();
     }
     exports.landing_page = function(req, res) {
-        res.send('<h1>Welcome to the guestbook application.</h1>');
+        res.render("dashboard/dashboard.mustache",
+            {
+            'title': 'Dashboard'
+            }
+            );
     }
     exports.new_entry = function(req, res) {
         res.send('<h1>Not yet implemented: show a new entry page.</h1>');

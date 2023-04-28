@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+const mustache = require('mustache-express');
+app.engine('mustache', mustache());
+app.set('view engine', 'mustache');
 const path = require('path');
 //const Database = require('nedb');
 const public = path.join(__dirname,'public');
