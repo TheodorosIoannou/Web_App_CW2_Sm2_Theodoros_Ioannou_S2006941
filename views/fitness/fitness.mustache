@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <!-- This include the stylesheet of bootstrap and sets the viewport width to the width of the device-->
+    {{>index}}
+</head>
+
+<body>
+    <!-- This is the header section with two columns, displaying the wellness app's logo and the user profile  -->
+    <header style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <a href="/">
+                <img src="./images/logo.jpg" alt="logo">
+            </a>
+        </div>
+        <div>
+            <img src="./images/profile.jpg" alt="Profile">
+            <p> <a href="/" style="color: black;" style="text-align: center;">Hi, User 1 </a></p>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- This is the side navigation bar with links to the different sections of the page-->
+            <nav class="col-lg-2 d-none d-lg-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <!-- This is the link for the Nutrition section -->
+                            <a class="nav-link active" href="nutrition" style="color: black;">
+                                Nutrition
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- This is the link for the Fitness section -->
+                            <a class="nav-link" href="fitness" style="color: black;">
+                                Fitness
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- This is the link for the Healthy lifestyle section -->
+                            <a class="nav-link" href="healthy_lifestyle" style="color: black;">
+                                Healthy Lifestyle
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main role="main" class="col-lg-10 ml-sm-auto px-4">
+                <!-- This is the main content section of the page -->
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                </div>
+                <div>
+                    <img src="./images/fitness2.png" alt="fitnessLogo2">
+                    <h1>Fitness</h1>
+                </div>
+                <div class="personal-goals-box" style="background-color: rgb(11, 80, 0); border-radius: 5%; color: white;">
+                    <h2>Personal Goals</h2>
+                    <form style="color: white;">
+                      <label for="exercise-name">Exercise Name:</label>
+                      <input type="text" id="exercise-name" name="exercise-name">
+                  
+                      <label for="reps">Reps:</label>
+                      <input type="number" id="reps" name="reps">
+                  
+                      <label for="sets">Sets:</label>
+                      <input type="number" id="sets" name="sets">
+                  
+                      <label for="start-date">Start Date:</label>
+                      <input type="date" id="start-date" name="start-date">
+                  
+                      <label for="end-date">End Date:</label>
+                      <input type="date" id="end-date" name="end-date">
+                  
+                      <button id="add-personal-goal-button" style="color: white; background-color: rgb(77, 77, 77); border-radius: 20%;" >+Add</button>
+                    </form>
+                    <form>
+                        <label for="exercise-name">Exercise Name:</label>
+                        <input type="text" id="exercise-name" name="exercise-name">
+                    
+                        <label for="reps">Reps:</label>
+                        <input type="number" id="reps" name="reps">
+                    
+                        <label for="sets">Sets:</label>
+                        <input type="number" id="sets" name="sets">
+                    
+                        <label for="start-date">Start Date:</label>
+                        <input type="date" id="start-date" name="start-date">
+                    
+                        <label for="end-date">End Date:</label>
+                        <input type="date" id="end-date" name="end-date">
+                    
+                        <button id="edit-button" style="color: white; background-color: rgb(77, 77, 77); border-radius: 20%;" >?Edit</button>
+                        <button id="delete-button" style="color: white; background-color: rgb(77, 77, 77); border-radius: 20%;">-Delete</button>
+                      </form>
+                      
+                     
+                    </table>
+                  </div>
+                  
+                  <div class="achievements-box " style="background-color: rgb(11, 80, 0); border-radius: 5%; color: white;">
+                    <h2>Achievements</h2>
+                    <form>
+                      <label for="achievement-name">Name:</label>
+                      
+                  
+                      <input type="text" id="achievement-answer" name="achievement-answer">
+                  
+                      <button id="add-achievement-button" style="color: white; background-color: rgb(77, 77, 77); border-radius: 20%;" >+Add</button>
+                    </form>
+                   
+            
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

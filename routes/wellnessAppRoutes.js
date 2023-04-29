@@ -2,7 +2,12 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/wellnessAppControllers');
 router.get("/", controller.landing_page);
-router.get('/guestbook', controller.entries_list);
+router.get("/login", controller.login_page);
+router.get("/register", controller.register_page);
+router.get("/nutrition", controller.nutrition_page);
+router.get("/fitness", controller.fitness_page);
+router.get("/healthy_lifestyle", controller.healthy_lifestyle_page);
+
 router.get('/new', controller.new_entry);
 router.get('/aboutUs', function(req, res) {
     res.redirect('/aboutUs.html');

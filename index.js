@@ -25,14 +25,6 @@ app.get('/aboutUs', function (req, res) {
 })
 
 
-app.get('/login', function (req, res) {
-    res.sendFile(path.join(public, 'login.html'));
-})
-
-app.get('/register', function (req, res) {
-   res.sendFile(path.join(public, 'register.html'));
-})
-
 app.use(function (req, res) {
    res.status(404);
     res.send('Oops! We didn\'t find what you are looking for.');
