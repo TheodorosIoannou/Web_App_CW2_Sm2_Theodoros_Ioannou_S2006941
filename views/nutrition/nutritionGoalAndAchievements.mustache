@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -47,55 +48,54 @@
             </nav>
             <main role="main" class="col-lg-10 ml-sm-auto px-4">
                 <!-- This is the main content section of the page -->
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 </div>
                 <div>
-                    <img src="./images/fitness2.png" alt="fitnessLogo2">
-                    <h1>Fitness</h1>
+                    <img src="./images/nutrition2.png" alt="nutritionLogo2">
+                    <di>
+                        <h1>Nutrition</h1>
                 </div>
-                <div class="personal-fitness-goals-box" style="background-color: rgb(11, 80, 0);   color: white;">
+                <div class="personal-nutrition-goals-box" style="background-color: rgb(255, 89, 0);   color: white;">
                     <h2>Personal Goals</h2>
-                    <form style="color: white;">
-                      <label for="exercise-name">Exercise Name:</label>
-                      <input type="text" id="exercise-name" name="exercise-name">
-                  
-                      <label for="reps">Reps:</label>
-                      <input type="number" id="reps" name="reps">
-                  
-                      <label for="sets">Sets:</label>
-                      <input type="number" id="sets" name="sets">
-                  
-                      <label for="start-date">Start Date:</label>
-                      <input type="date" id="start-date" name="start-date">
-                  
-                      <label for="end-date">End Date:</label>
-                      <input type="date" id="end-date" name="end-date">
-                  
-                      <button id="add-fitness-personal-goal-button" style="color: white; background-color: rgb(77, 77, 77);  " >+Add</button>
-                    
-                        <button id="edit-fitness-personal-goal-button" style="color: white; background-color: rgb(77, 77, 77);  " >?Edit</button>
-                        <button id="delete-fitness-personal-goal-button" style="color: white; background-color: rgb(77, 77, 77);  ">-Delete</button>
-                      </form>
-                      
-                     
-                    </table>
-                  </div>
-                  
-                  <div class="achievements-box " style="background-color: rgb(11, 80, 0);   color: white;">
-                    <h2>Achievements</h2>
-                    <form>
-                      <label for="achievement-name">Name:</label>
-                      
-                  
-                      <input type="text" id="achievement-answer" name="achievement-answer">
-                  
-                      <button id="add-achievement-button" style="color: white; background-color: rgb(77, 77, 77);  " >+Add</button>
+                        <button id="add-nutrition-personal-goal-button"
+                            style="color: white; background-color: rgb(77, 77, 77);  ">+Add</button>
                     </form>
-                   
-            
+                    <form>  
+                        <!--Here need to give back the data when adding a nutrition goal-->
+                        <table>
+                            {{/nutritionGoals}}
+                            
+                        <button id="edit-nutrition-personal-goal-button"
+                            style="color: white; background-color: rgb(77, 77, 77);  ">?Edit</button>
+                        <button id="delete-nutrition-personal-goal-button"
+                            style="color: white; background-color: rgb(77, 77, 77);  ">-Delete</button>
+                    </form>
+                    </table>
+                </div>
+
+                <div class="nutrition-achievements-box " style="background-color: rgb(255, 89, 0);   color: white;">
+                    <h2>Achievements</h2>
+                    <button id="add-nutrition-achievement-button"
+                            style="color: white; background-color: rgb(77, 77, 77);  ">+Add</button>
+                            <button id="edit-nutrition-personal-goal-button"
+                            style="color: white; background-color: rgb(77, 77, 77);  ">?Edit</button>
+                        <button id="delete-nutrition-personal-goal-button"
+                            style="color: white; background-color: rgb(77, 77, 77);  ">-Delete</button>
+
+                    <table>
+                                                <!--Here need to give back the data when adding a nutrition achievement-->
+                        {{/nutritionAchievements}}
+                    </table>
             </main>
         </div>
     </div>
+</body>
+
+</html>
+</main>
+</div>
+</div>
 </body>
 
 </html>

@@ -1,4 +1,3 @@
-
 const wellnessAppDAO = require('../models/wellnessApp');
 const db = new wellnessAppDAO();
 db.init();
@@ -9,9 +8,9 @@ exports.entries_list = function (req, res) {
 }
 
 exports.landing_page = function (req, res) {
-    res.render("dashboard/dashboard.mustache",
+    res.render("user/aboutUs.mustache",
         {
-            'title': 'Dashboard'
+            'title': 'Landing Page'
         }
     );
 }
@@ -52,6 +51,22 @@ exports.healthy_lifestyle_page = function (req, res) {
     res.render("healthy_lifestyle/healthy_lifestyle.mustache",
         {
             'title': 'Healthy Lifestyle'
+        }
+    );
+}
+
+exports.aboutUs_page = function (req, res) {
+    res.render("user/aboutUs.mustache",
+        {
+            'title': 'About Us'
+        }
+    );
+}
+
+exports.dashboard_page = function (req, res) {
+    res.render("dashboard/dashboard.mustache",
+        {
+            'title': 'Dashboard'
         }
     );
 }

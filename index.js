@@ -20,8 +20,8 @@ app.get('/', function (req, res) {
    res.send('Hello! Welcome to my wellness web application.');
 })
 
-app.get('/aboutUs', function (req, res) {
-   res.sendFile(path.join(public, 'aboutUs.html'));
+app.get('/aboutUs.mustache', function (req, res) {
+   res.sendFile(path.join(public, 'aboutUs.mustache'));
 })
 
 
