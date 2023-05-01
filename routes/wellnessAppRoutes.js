@@ -5,6 +5,8 @@ router.get("/", controller.landing_page);
 router.get("/login", controller.login_page);
 router.get("/register", controller.register_page);
 router.get("/nutrition", controller.nutrition_page);
+router.get("/addNutritionGoal", controller.addNutritionGoal_page);
+
 router.get("/fitness", controller.fitness_page);
 router.get("/healthy_lifestyle", controller.healthy_lifestyle_page);
 router.get("/aboutUs", controller.aboutUs_page);
