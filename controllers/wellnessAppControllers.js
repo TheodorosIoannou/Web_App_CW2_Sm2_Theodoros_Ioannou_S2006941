@@ -1,4 +1,4 @@
-const wellnessAppDAO = require('../models/wellnessApp');
+/* const wellnessAppDAO = require('../models/wellnessApp');
 const db = new wellnessAppDAO();
 
 
@@ -85,4 +85,4 @@ exports.new_entry = function (req, res) {
 exports.peters_entries = function (req, res) {
     res.send('<h1>Processing Peter\'s Entries, see terminal</h1>');
     db.getPetersEntries();
-}
+}*/
