@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, "./public")));
 
 
 
-let db = new sqlite3.Database('./database/nutritionGoals.db', sqlite3.OPEN_READWRITE,
+let dbng = new sqlite3.Database('./database/nutritionGoals.db', sqlite3.OPEN_READWRITE,
    (err) => {
       if (err) {
          console.error(err.message);
@@ -24,7 +24,7 @@ let db = new sqlite3.Database('./database/nutritionGoals.db', sqlite3.OPEN_READW
          console.log('Connected to the nutritionGoals database.');
    });
 
-db.run('CREATE TABLE IF NOT EXISTS nGoals(id TEXT, maxkcal NUMBER, startDate DATE, endDate DATE)');
+dbng.run('CREATE TABLE IF NOT EXISTS nGoals(id TEXT, maxkcal NUMBER, startDate DATE, endDate DATE)');
 
 //display interface
 app.get('/', function (req, res) {
@@ -32,9 +32,9 @@ app.get('/', function (req, res) {
 });
 
 // Insert nutrition goal
-app.post('/add', function (req, res) {
-   db.serialize(() => {
-      db.run('INSERT INTO nGoals(id,maxKcal,startDate,endDate) VALUES(?,?,?,?)', [req.body.id, req.body.maxkcal, req.body.startDate, req.body.endDate], function (err) {
+app.post('/addNutritionGoals', function (req, res) {
+   dbng.serialize(() => {
+      dbng.run('INSERT INTO nGoals(id,maxKcal,startDate,endDate) VALUES(?,?,?,?)', [req.body.id, req.body.maxkcal, req.body.startDate, req.body.endDate], function (err) {
          if (err) {
             return console.log(err.message);
          }
@@ -64,9 +64,9 @@ app.post('/add', function (req, res) {
 })*/
 
 //Update
-app.post('/update', function (req, res) {
-   db.serialize(() => {
-      db.run('UPDATE nGoals SET maxkcal = ?, startDate = ?, endDate = ? WHERE id = ?', [req.body.maxkcal, req.body.startDate, req.body.endDate, req.body.id],
+app.post('/updateNutritionGoals', function (req, res) {
+   dbng.serialize(() => {
+      dbng.run('UPDATE nGoals SET maxkcal = ?, startDate = ?, endDate = ? WHERE id = ?', [req.body.maxkcal, req.body.startDate, req.body.endDate, req.body.id],
       function (err) {
             if (err) {77
                res.send("Error encountered while updating");
@@ -79,9 +79,9 @@ app.post('/update', function (req, res) {
 });
 
 //Delete
-app.post('/delete', function (req, res) {
-   db.serialize(() => {
-      db.run('DELETE FROM nGoals WHERE id = ?', req.body.id, function (err) {
+app.post('/deleteNutritionGoals', function (req, res) {
+   dbng.serialize(() => {
+      dbng.run('DELETE FROM nGoals WHERE id = ?', req.body.id, function (err) {
          if (err) {
             res.send("Error encountered while deleting");
             return console.error(err.message);
@@ -92,9 +92,9 @@ app.post('/delete', function (req, res) {
    });   
 });
 //show all
-app.post("/showAll", function (req, res) {
-   db.serialize(() => {
-      db.all("SELECT * FROM nGoals", function (err, rows) {
+app.post("/showAllNutritionGoals", function (req, res) {
+   dbng.serialize(() => {
+      dbng.all("SELECT * FROM nGoals", function (err, rows) {
          if (err) {
             res.status(400).json({ "error": err.message });
             return;
@@ -129,9 +129,10 @@ app.post('/addNutritionAchievement', function (req, res) {
          if (err) {
             return console.log(err.message);
          }
-         res.send("New nutrition achievement added successfully");
-         console.log("New nutrition achievements has been added");
          res.sendFile(path.join(__dirname, './public/index.html'));
+         res.send("New nutrition achievement added successfully");
+         console.log("New nutrition achievement has been added");
+         
       });
    });
 });
