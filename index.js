@@ -1,13 +1,18 @@
 const sqlite3 = require('sqlite3').verbose();
+const router = require('./routes/wellnessAppRoutes');
 const express = require('express');
 const path = require('path');
-
+const public = path.join(__dirname,'public');
+app.use(express.static(public));
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: false}));
 const app = express();
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "./public")));
+app.use(express.static(path.join(__dirsname, "./public")));
 
 //display interface
 app.get('/', function (req, res) {
+   res.send('Hello! Welcome to the wellness app')
    res.sendFile(path.join(__dirname, './public/index.html'));
 });
 //--------------------------------------------Nutrition Section-----------------------------------------
