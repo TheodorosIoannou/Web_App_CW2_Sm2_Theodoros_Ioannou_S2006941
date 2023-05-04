@@ -1,44 +1,11 @@
-const wellnessAppDAO = require('../models/wellnessAppModel');
-const dbng = new wellnessAppDAO();
-const dbna = new wellnessAppDAO();
-const dbfg = new wellnessAppDAO();
-const dbfa = new wellnessAppDAO();
-const dbhg = new wellnessAppDAO();
-const dbha = new wellnessAppDAO();
+/* const wellnessAppDAO = require('../models/wellnessApp');
+const db = new wellnessAppDAO();
 
 
-exports.nutritionGoals_list = function (req, res) {
-    res.send('<h1>Not yet implemented: show a list of guest book entries.</h1>');
-    dbng.getAllEntries();
+exports.entries_list = function (req, res) {
+    res.send('<h1>Not yet implemented: show a list of wellness app achievements.</h1>');
+    db.getAllEntries();
 }
-
-exports.nutritionAchievements_list = function (req, res) {
-    res.send('<h1>Not yet implemented: show a list of guest book entries.</h1>');
-    dbna.getAllEntries();
-}
-
-exports.fitnessGoals_list = function (req, res) {
-    res.send('<h1>Not yet implemented: show a list of guest book entries.</h1>');
-    dbfg.getAllEntries();
-}
-
-exports.fitnessAchievements_list = function (req, res) {
-    res.send('<h1>Not yet implemented: show a list of guest book entries.</h1>');
-    dbfa.getAllEntries();
-}
-
-exports.healthyLifestyleGoals_list = function (req, res) {
-    res.send('<h1>Not yet implemented: show a list of guest book entries.</h1>');
-    dbhg.getAllEntries();
-}
-
-exports.healthyLifestyleAchievements_list = function (req, res) {
-    res.send('<h1>Not yet implemented: show a list of guest book entries.</h1>');
-    dbha.getAllEntries();
-}
-
-
-
 
 exports.landing_page = function (req, res) {
     res.render("user/aboutUs.mustache",
@@ -49,12 +16,12 @@ exports.landing_page = function (req, res) {
 }
 
 
-exports.login_page = function (req, res) {
+exports.login_page = function(req, res) {
     res.render("user/login",
         {
-            'title': 'Login'
+        'title': 'Login'
         }
-    );
+        );
 }
 
 exports.register_page = function (req, res) {
@@ -112,3 +79,10 @@ exports.dashboard_page = function (req, res) {
     );
 }
 
+exports.new_entry = function (req, res) {
+    res.send('<h1>Not yet implemented: show a new entry page.</h1>');
+}
+exports.peters_entries = function (req, res) {
+    res.send('<h1>Processing Peter\'s Entries, see terminal</h1>');
+    db.getPetersEntries();
+}*/

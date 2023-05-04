@@ -1,5 +1,4 @@
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -65,8 +64,7 @@
                         <di>
                             <h1>Nutrition</h1>
                     </div>
-                    <div class="personal-nutrition-goals-box"
-                        style="background-color: rgb(255, 89, 0);   color: white;">
+                    <div class="personal-nutrition-goals-box" style="background-color: rgb(255, 89, 0);   color: white;">
                         <h2>Personal Goals</h2>
 
                         <!--Here adding a new nutrition goal-->
@@ -93,25 +91,25 @@
 
                         <!--Here editing the Nutrition Goal-->
                         <form action="/updateNutritionGoals" method="POST">
-                            <fieldset>
-                                <h3>Edit Nutrtition Goal</h3>
-                                <label>Goal id</label>
-                                <input type="text" id='id' name="id" required>
-                                <br><br>
-                                <label>Max Kcal</label>
-                                <input type="number" id='maxkcal' name="maxkcal" required>
-                                <br><br>
-                                <label>Start Date</label>
-                                <input type="date" id="startDate" name="startDate" required>
-                                <br><br>
-                                <label>End Date</label>
-                                <input type="date" id='endDate' name="endDate" required>
-                                <br><br>
-                                <button type="submit" type submit id="add-nutrition-personal-goal-button"
-                                    style="color: white; background-color: rgb(77, 77, 77);  ">?Edit</button>
-                                <br><br><br>
-                            </fieldset>
-                        </form>
+                        <fieldset>
+                            <h3>Edit Nutrtition Goal</h3>
+                            <label>Goal id</label>
+                            <input type="text" id='id' name="id" required>
+                            <br><br>
+                            <label>Max Kcal</label>
+                            <input type="number" id='maxkcal' name="maxkcal" required>
+                            <br><br>
+                            <label>Start Date</label>
+                            <input type="date" id="startDate" name="startDate" required>
+                            <br><br>
+                            <label>End Date</label>
+                            <input type="date" id='endDate' name="endDate" required>
+                            <br><br>
+                            <button type="submit" type submit id="add-nutrition-personal-goal-button"
+                                style="color: white; background-color: rgb(77, 77, 77);  ">?Edit</button>
+                            <br><br><br>
+                        </fieldset>
+                    </form>
 
 
                         <!--Here deleting the Nutrition Goal-->
@@ -121,7 +119,7 @@
                                 <label>Goal id</label>
                                 <input type="text" id='id' name="id" required>
                                 <br><br>
-
+                               
                                 <button type="submit" type submit id="add-nutrition-personal-goal-button"
                                     style="color: white; background-color: rgb(77, 77, 77);  ">-Delete</button>
                                 <br><br><br>
@@ -129,40 +127,37 @@
                         </form>
 
                         <!-- Here showing all the nutrition goals -->
-                        <form action="/showAllNutritionGoals" method="POST">
+                                <form action="/showAllNutritionGoals" method="POST">
                             <fieldset>
                                 <button class="btn btn-primary" type="submit">Show All Goals</button>
                                 <br><br><br>
-                            </fieldset>
-                        </form>
-                    </div>
+                            </fieldset></form></div>
 
-
-                    <div class="nutrition-achievements-box " style="background-color: rgb(255, 89, 0);   color: white;">
-                        <!-- Here adding a new nutrition achievement-->
-                        <form action="/addNutritionAchievement" method="POST">
-                            <fieldset>
+                        
+                            <div class="nutrition-achievements-box "
+                                style="background-color: rgb(255, 89, 0);   color: white;">
+                                <!-- Here adding a new nutrition achievement--> 
+                                <form action="/addNutritionAchievement" method="POST">   
+                                <fieldset>                               
                                 <h3>Add a new nutrition achievement</h3>
-                                <label>Name</label>
-                                <input type="text" id="name" name="name">
-                                <button type="submit" id="add-nutrition-achievement-button"
-                                    style="color: white; background-color: rgb(77, 77, 77);  ">+Add</button>
-                                <br><br><br>
-                            </fieldset>
-                        </form>
+                                        <label>Name</label>
+                                        <input type="text" id="name" name="name">
+                                        <button type="submit" id="add-nutrition-achievement-button" style="color: white; background-color: rgb(77, 77, 77);  ">+Add</button>
+                                            <br><br><br>
+                                </fieldset>
+                                </form>
 
-                        <!--here showing all nutrition achievements-->
+                                <!--here showing all nutrition achievements-->
 
-                        <form action="/showAllNutritionAchievements" method="POST">
-                            <fieldset>
-                                <button class="btn btn-primary" type="submit">Show All Achievements</button>
-                                <br><br><br>
-                            </fieldset>
+                                <form action="/showAllNutritionAchievements" method="POST">
+                                <fieldset>
+                                    <button class="btn btn-primary" type="submit">Show All Achievements</button>
+                                    <br><br><br>
+                                </fieldset>
                         </form>
                     </div>
-                    <form>Fitness</form>
-
-                    <!----------------------------------------------This is the Fitness section-------------------------------------------------------->
+                    
+<!----------------------------------------------This is the Fitness section-------------------------------------------------------->
 
                     <div
                         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -172,8 +167,7 @@
                         <di>
                             <h1>Fitness</h1>
                     </div>
-                    <div class="personal-nutrition-goals-box"
-                        style="background-color: rgb(66, 0, 189);   color: white;">
+                    <div class="personal-nutrition-goals-box" style="background-color: rgb(66, 0, 189);   color: white;">
                         <h2>Personal Goals</h2>
 
                         <!--Here adding a new fitness goal-->
@@ -183,8 +177,11 @@
                                 <label>Goal id</label>
                                 <input type="text" id='id' name="id" required>
                                 <br><br>
+                                <label>Exercise Name</label>
+                                <input type="text" id='exercisename' name="exercisename" required>
+                                <br><br>
                                 <label>Reps</label>
-                                <input type="number" id='Reps' name="Reps" required>
+                                <input type="number" id='reps' name="reps" required>
                                 <br><br>
                                 <label>Sets</label>
                                 <input type="number" id="sets" name="sets" required>
@@ -196,7 +193,7 @@
                                 <input type="date" id='endDate' name="endDate" required>
                                 <br><br>
                                 <button type="submit" type submit id="add-nutrition-personal-goal-button"
-                                    style="color: white; background-color: rgb(77, 77, 77);  ">?Edit</button>
+                                    style="color: white; background-color: rgb(77, 77, 77);  ">+Add</button>
                                 <br><br><br>
                             </fieldset>
                         </form>
@@ -208,8 +205,11 @@
                                 <label>Goal id</label>
                                 <input type="text" id='id' name="id" required>
                                 <br><br>
+                                <label>Exercise Name</label>
+                                <input type="text" id='exercisename' name="exercisename" required>
+                                <br><br>
                                 <label>Reps</label>
-                                <input type="number" id='Reps' name="Reps" required>
+                                <input type="number" id='reps' name="reps" required>
                                 <br><br>
                                 <label>Sets</label>
                                 <input type="number" id="sets" name="sets" required>
@@ -223,8 +223,7 @@
                                 <button type="submit" type submit id="add-nutrition-personal-goal-button"
                                     style="color: white; background-color: rgb(77, 77, 77);  ">?Edit</button>
                                 <br><br><br>
-                            </fieldset>
-                        </form>
+                    </form>
 
 
                         <!--Here deleting the Fitness Goal-->
@@ -234,7 +233,7 @@
                                 <label>Goal id</label>
                                 <input type="text" id='id' name="id" required>
                                 <br><br>
-
+                               
                                 <button type="submit" type submit id="add-nutrition-personal-goal-button"
                                     style="color: white; background-color: rgb(77, 77, 77);  ">-Delete</button>
                                 <br><br><br>
@@ -242,39 +241,37 @@
                         </form>
 
                         <!-- Here showing all the fitness goals -->
-                        <form action="/showAllFitnessGoals" method="POST">
+                                <form action="/showAllFitnessGoals" method="POST">
                             <fieldset>
                                 <button class="btn btn-primary" type="submit">Show All Goals</button>
                                 <br><br><br>
-                            </fieldset>
-                        </form>
-                    </div>
+                            </fieldset></form></div>
 
-
-                    <div class="fitness-achievements-box " style="background-color: rgb(66, 0, 189);   color: white;">
-                        <!-- Here adding a new fitness achievement-->
-                        <form action="/addFitnessAchievement" method="POST">
-                            <fieldset>
+                        
+                            <div class="fitness-achievements-box "
+                                style="background-color: rgb(66, 0, 189);   color: white;">
+                                <!-- Here adding a new fitness achievement--> 
+                                <form action="/addFitnessAchievement" method="POST">   
+                                <fieldset>                               
                                 <h3>Add a new fitness achievement</h3>
-                                <label>Name</label>
-                                <input type="text" id="name" name="name">
-                                <button type="submit" id="add-nutrition-achievement-button"
-                                    style="color: white; background-color: rgb(77, 77, 77);  ">+Add</button>
-                                <br><br><br>
-                            </fieldset>
-                        </form>
+                                        <label>Name</label>
+                                        <input type="text" id="name" name="name">
+                                        <button type="submit" id="add-nutrition-achievement-button" style="color: white; background-color: rgb(77, 77, 77);  ">+Add</button>
+                                            <br><br><br>
+                                </fieldset>
+                                </form>
 
-                        <!--here showing all fitness achievements-->
+                                <!--here showing all fitness achievements-->
 
-                        <form action="/showAllFitnessAchievements" method="POST">
-                            <fieldset>
-                                <button class="btn btn-primary" type="submit">Show All Achievements</button>
-                                <br><br><br>
-                            </fieldset>
+                                <form action="/showAllFitnessAchievements" method="POST">
+                                <fieldset>
+                                    <button class="btn btn-primary" type="submit">Show All Achievements</button>
+                                    <br><br><br>
+                                </fieldset>
                         </form>
                     </div>
-                    <!-----------------------------------------------This is the Healthy Lifestyle Section------------------------------------->
-                    <div
+ <!-----------------------------------------------This is the Healthy Lifestyle Section------------------------------------->
+ <div
                         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     </div>
                     <div>
@@ -302,7 +299,7 @@
                                 <input type="date" id='endDate' name="endDate" required>
                                 <br><br>
                                 <button type="submit" type submit id="add-nutrition-personal-goal-button"
-                                    style="color: white; background-color: rgb(77, 77, 77);  ">?Edit</button>
+                                    style="color: white; background-color: rgb(77, 77, 77);  ">+Add</button>
                                 <br><br><br>
                             </fieldset>
                         </form>
@@ -327,7 +324,7 @@
                                     style="color: white; background-color: rgb(77, 77, 77);  ">?Edit</button>
                                 <br><br><br>
                             </fieldset>
-                        </form>
+                    </form>
 
 
                         <!--Here deleting the Healthy Lifestyle Goal-->
@@ -337,52 +334,49 @@
                                 <label>Goal id</label>
                                 <input type="text" id='id' name="id" required>
                                 <br><br>
-
+                               
                                 <button type="submit" type submit id="add-nutrition-personal-goal-button"
                                     style="color: white; background-color: rgb(77, 77, 77);  ">-Delete</button>
                                 <br><br><br>
                             </fieldset>
                         </form>
 
-                        <!-- Here showing all the fitness goals -->
-                        <form action="/showAllHealthyGoals" method="POST">
+                        <!-- Here showing all the Healthy Lifestyle goals -->
+                                <form action="/showAllHealthyGoals" method="POST">
                             <fieldset>
                                 <button class="btn btn-primary" type="submit">Show All Goals</button>
                                 <br><br><br>
-                            </fieldset>
-                        </form>
-                    </div>
+                            </fieldset></form></div>
 
-
-                    <div class="fitness-achievements-box" style="background-color: rgb(14, 87, 0);   color: white;">
-                        <!-- Here adding a new Healthy Lifestyle achievement-->
-                        <form action="/addHealthyAchievement" method="POST">
-                            <fieldset>
+                        
+                            <div class="fitness-achievements-box"
+                                style="background-color: rgb(14, 87, 0);   color: white;">
+                                <!-- Here adding a new Healthy Lifestyle achievement-->
+                                <form action="/addHealthyAchievement" method="POST">   
+                                <fieldset>                               
                                 <h3>Add a new Healthy Lifestyle achievement</h3>
-                                <label>Name</label>
-                                <input type="text" id="name" name="name">
-                                <button type="submit" id="add-nutrition-achievement-button"
-                                    style="color: white; background-color: rgb(77, 77, 77);  ">+Add</button>
-                                <br><br><br>
-                            </fieldset>
-                        </form>
+                                        <label>Name</label>
+                                        <input type="text" id="name" name="name">
+                                        <button type="submit" id="add-nutrition-achievement-button" style="color: white; background-color: rgb(77, 77, 77);  ">+Add</button>
+                                            <br><br><br>
+                                </fieldset>
+                                </form>
 
-                        <!--here showing all fitness achievements-->
+                                <!--here showing all Healthy Lifestyle achievements-->
 
-                        <form action="/showAllFitnessAchievements" method="POST">
-                            <fieldset>
-                                <button class="btn btn-primary" type="submit">Show All Achievements</button>
-                                <br><br><br>
-                            </fieldset>
+                                <form action="/showAllHealthyAchievements" method="POST">
+                                <fieldset>
+                                    <button class="btn btn-primary" type="submit">Show All Achievements</button>
+                                    <br><br><br>
+                                </fieldset>
                         </form>
                     </div>
-
 
 
                 </main>
-            </div>
-        </div>
     </body>
-</body>
+
+
+
 
 </html>
