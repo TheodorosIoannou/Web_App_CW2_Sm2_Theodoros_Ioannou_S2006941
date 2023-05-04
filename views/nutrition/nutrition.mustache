@@ -1,129 +1,170 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    
+
 
 <head>
-    <!-- This include the stylesheet of bootstrap and sets the viewport width to the width of the device-->
-    {{>index}}
+    <link href="styles/styles.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition</title>
+    {{Nutrition}}
 </head>
 
 <body>
-    <!-- This is the header section with two columns, displaying the wellness app's logo and the user profile  -->
-    <header style="display: flex; justify-content: space-between; align-items: center;">
-        <div>
-            <a href="/dashboard">
-                <img src="./images/logo.jpg" alt="logo">
-            </a>
+
+    </head>
+
+    <body>
+        <!-- This is the header section with two columns, displaying the wellness app's logo and the user profile  -->
+        <header style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <a href="/dashboard">
+                    <img src="./images/logo.jpg" alt="logo">
+                </a>
+            </div>
+            <div>
+                <img src="./images/profile.jpg" alt="Profile">
+                <p> <a href="/" style="color: black;" style="text-align: center;">Hi, User 1 </a></p>
+            </div>
+        </header>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- This is the side navigation bar with links to the different sections of the page-->
+                <nav class="navigation-bar">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <!-- This is the link for the Nutrition section -->
+                                <a class="nav-link active" href="nutrition" style="color: black;">
+                                    Nutrition
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <!-- This is the link for the Fitness section -->
+                                <a class="nav-link" href="fitness" style="color: black;">
+                                    Fitness
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <!-- This is the link for the Healthy lifestyle section -->
+                                <a class="nav-link" href="healthy_lifestyle" style="color: black;">
+                                    Healthy Lifestyle
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <main role="main" class="col-lg-10 ml-sm-auto px-4">
+                    <!-- This is the main content section of the page -->
+                    <div
+                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    </div>
+                    <div>
+                        <img src="./images/nutrition2.png" alt="nutritionLogo2">
+                        <di>
+                            <h1>Nutrition</h1>
+                    </div>
+                    <div class="personal-nutrition-goals-box"
+                        style="background-color: rgb(255, 89, 0);   color: white;">
+                        <h2>Personal Goals</h2>
+
+                        <!--Here adding a new nutrition goal-->
+                        <form action="/addNutritionGoals" method="POST">
+                            <fieldset>
+                                <h3>Add a new Nutrtition Goal</h3>
+                                <label>Goal id</label>
+                                <input type="text" id='id' name="id" required>
+                                <br><br>
+                                <label>Max Kcal</label>
+                                <input type="number" id='maxkcal' name="maxkcal" required>
+                                <br><br>
+                                <label>Start Date</label>
+                                <input type="date" id="startDate" name="startDate" required>
+                                <br><br>
+                                <label>End Date</label>
+                                <input type="date" id='endDate' name="endDate" required>
+                                <br><br>
+                                <button type="submit" type submit id="add-nutrition-personal-goal-button"
+                                    style="color: white; background-color: rgb(77, 77, 77);  ">+Add</button>
+                                <br><br><br>
+                            </fieldset>
+                        </form>
+
+                        <!--Here editing the Nutrition Goal-->
+                        <form action="/updateNutritionGoals" method="POST">
+                            <fieldset>
+                                <h3>Edit Nutrtition Goal</h3>
+                                <label>Goal id</label>
+                                <input type="text" id='id' name="id" required>
+                                <br><br>
+                                <label>Max Kcal</label>
+                                <input type="number" id='maxkcal' name="maxkcal" required>
+                                <br><br>
+                                <label>Start Date</label>
+                                <input type="date" id="startDate" name="startDate" required>
+                                <br><br>
+                                <label>End Date</label>
+                                <input type="date" id='endDate' name="endDate" required>
+                                <br><br>
+                                <button type="submit" type submit id="add-nutrition-personal-goal-button"
+                                    style="color: white; background-color: rgb(77, 77, 77);  ">?Edit</button>
+                                <br><br><br>
+                            </fieldset>
+                        </form>
+
+
+                        <!--Here deleting the Nutrition Goal-->
+                        <form action="/deleteNutritionGoals" method="POST">
+                            <fieldset>
+                                <h3>Delete Nutrtition Goal</h3>
+                                <label>Goal id</label>
+                                <input type="text" id='id' name="id" required>
+                                <br><br>
+
+                                <button type="submit" type submit id="add-nutrition-personal-goal-button"
+                                    style="color: white; background-color: rgb(77, 77, 77);  ">-Delete</button>
+                                <br><br><br>
+                            </fieldset>
+                        </form>
+
+                        <!-- Here showing all the nutrition goals -->
+                        <form action="/showAllNutritionGoals" method="POST">
+                            <fieldset>
+                                <button class="btn btn-primary" type="submit">Show All Goals</button>
+                                <br><br><br>
+                            </fieldset>
+                        </form>
+                    </div>
+
+
+                    <div class="nutrition-achievements-box " style="background-color: rgb(255, 89, 0);   color: white;">
+                        <!-- Here adding a new nutrition achievement-->
+                        <form action="/addNutritionAchievement" method="POST">
+                            <fieldset>
+                                <h3>Add a new nutrition achievement</h3>
+                                <label>Name</label>
+                                <input type="text" id="name" name="name">
+                                <button type="submit" id="add-nutrition-achievement-button"
+                                    style="color: white; background-color: rgb(77, 77, 77);  ">+Add</button>
+                                <br><br><br>
+                            </fieldset>
+                        </form>
+
+                        <!--here showing all nutrition achievements-->
+
+                        <form action="/showAllNutritionAchievements" method="POST">
+                            <fieldset>
+                                <button class="btn btn-primary" type="submit">Show All Achievements</button>
+                                <br><br><br>
+                            </fieldset>
+                        </form>
+                    </div>
+                </main>
+            </div>
         </div>
-        <div>
-            <img src="./images/profile.jpg" alt="Profile">
-            <p> <a href="/" style="color: black;" style="text-align: center;">Hi, User 1 </a></p>
-        </div>
-    </header>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- This is the side navigation bar with links to the different sections of the page-->
-            <nav class="navigation-bar">
-                <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <!-- This is the link for the Nutrition section -->
-                            <a class="nav-link active" href="nutrition" style="color: black;">
-                                Nutrition
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- This is the link for the Fitness section -->
-                            <a class="nav-link" href="fitness" style="color: black;">
-                                Fitness
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- This is the link for the Healthy lifestyle section -->
-                            <a class="nav-link" href="healthy_lifestyle" style="color: black;">
-                                Healthy Lifestyle
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <main role="main" class="col-lg-10 ml-sm-auto px-4">
-                <!-- This is the main content section of the page -->
-                <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                </div>
-                <div>
-                    <img src="./images/nutrition2.png" alt="nutritionLogo2">
-                    <di>
-                        <h1>Nutrition</h1>
-                </div>
-                <div class="personal-nutrition-goals-box" style="background-color: rgb(255, 89, 0);   color: white;">
-                    <h2>Personal Goals</h2>
-                   <form action="/addNutritionGoal">
-                    <button  id="add-nutrition-personal-goal-button"
-                    style="color: white; background-color: rgb(77, 77, 77);  ">+Add</button>
-                </form>
-                    <form>
-                        <!--Here need to give back the data when adding a nutrition goal-->
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Max Kcal</th>
-                                <th>Start Date</th>
-                                <th>End Date</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {{#nutritionGoals}}
-                            <tr>
-                                <td>{{id}}</td>
-                                <td>{{maxKcal}}</td>
-                                <td>{{startDate}}</td>
-                                <td>{{endDate}}</td>
-                                <td>
-
-                                    <button id="edit-nutrition-personal-goal-button"
-                                        style="color: white; background-color: rgb(77, 77, 77);  ">?Edit</button>
-                                </td>
-                                <td>
-                                    <button id="delete-nutrition-personal-goal-button"
-                                        style="color: white; background-color: rgb(77, 77, 77);  ">-Delete</button>
-                                </td>
-                            </tr>
-                            {{/nutritionGoals}}
-                        </tbody>
-                        </table>
-                    </form>
-
-
-                    </table>
-                </div>
-
-                <div class="nutrition-achievements-box " style="background-color: rgb(255, 89, 0);   color: white;">
-                    <h2>Achievements</h2>
-                    <form>
-                        <label for="nutrition-achievement-name">Name:</label>
-                        <input type="text" id="nutrition-achievement-answer" name="nutrition-achievement-answer">
-                        <button id="add-nutrition-achievement-button"
-                            style="color: white; background-color: rgb(77, 77, 77);  ">+Add</button>
-                    </form>
-                    <ul>
-                        {{#nutritionAchievements}}
-                        <li>{{name}}</li>
-                        {{/nutritionAchievements}}
-                    </ul>
-                </div>
-            </main>
-        </div>
-    </div>
-</body>
-
-
-</main>
-</div>
-</div>
+    </body>
 </body>
 
 </html>
