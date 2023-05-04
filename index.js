@@ -51,9 +51,7 @@ let dbng = new sqlite3.Database('./database/nutritionGoals.db', sqlite3.OPEN_REA
    });
 
 dbng.run('CREATE TABLE IF NOT EXISTS nGoals(id TEXT, maxkcal NUMBER, startDate DATE, endDate DATE)');
-
-
-
+//here
 // Insert nutrition goal functionality
 app.post('/addNutritionGoals', function (req, res) {
    dbng.serialize(() => {
