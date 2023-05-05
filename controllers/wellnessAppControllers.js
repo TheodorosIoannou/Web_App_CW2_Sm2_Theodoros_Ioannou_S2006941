@@ -1,11 +1,12 @@
-/* const wellnessAppDAO = require('../models/wellnessApp');
-const db = new wellnessAppDAO();
+const wellnessAppDAO = require('../models/wellnessAppModel');
+const dbng = new wellnessAppDAO("");
+const dbna = new wellnessAppDAO("");
+const dbfg = new wellnessAppDAO("fitnessGoals");
+const dbfa = new wellnessAppDAO("fitnessAchievements");
+const dbhg = new wellnessAppDAO("");
+const dbha = new wellnessAppDAO("healthyLifestyleAchievements");
 
-
-exports.entries_list = function (req, res) {
-    res.send('<h1>Not yet implemented: show a list of wellness app achievements.</h1>');
-    db.getAllEntries();
-}
+ 
 
 exports.landing_page = function (req, res) {
     res.render("user/aboutUs.mustache",
@@ -78,11 +79,3 @@ exports.dashboard_page = function (req, res) {
         }
     );
 }
-
-exports.new_entry = function (req, res) {
-    res.send('<h1>Not yet implemented: show a new entry page.</h1>');
-}
-exports.peters_entries = function (req, res) {
-    res.send('<h1>Processing Peter\'s Entries, see terminal</h1>');
-    db.getPetersEntries();
-}*/

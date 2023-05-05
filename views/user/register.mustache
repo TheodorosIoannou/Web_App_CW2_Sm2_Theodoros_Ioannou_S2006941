@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-   {{Register}}
-   {{>index}}
-   
+    {{Register}}
+    {{>index}}
+
 </head>
+
 <body>
     <header class="header">
         <div class="logo">
             <img src="./images/logo.png" alt="logo">
-               <p> <a href="/aboutUs">Wellness Web App</a></p>
-            
+            <p> <a href="/aboutUs">Wellness Web App</a></p>
+
         </div>
         <nav class="nav">
             <a href="/aboutUs">About</a>
-			<a href="/register">Register</a>
-			<a href="/login">Login</a>
+            <a href="/register">Register</a>
+            <a href="/login">Login</a>
         </nav>
     </header>
-    <section class="about-section">
-        <a>
-            <p class="about-text"></p>
-            <div class="login-box">
-                <h2 class="title">Register</h2>
-                </p>
-                <form method="post" action="login.php">
-                    <label-login for="email">Email</label>
-                    <input type="text" id="eamil" name="email" required><br><br>
-                    <label-login for="password">Password</label>
-                    <input type="password" id="password" name="password" required><br><br>
-                    <button type="submit" value="create account">Create an account</button>
-                </form>
-                </p>
-            </div>
-        </a>
-    </section>
+    </p>
+    <h2>New User Registration</h2>
+    <form method="post" role="/register">
+        <div class="form-group">
+            {{user-name-error}}
+            </p>
+        </div>
+        <label for="username">User Name</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Enter user name" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password (8 characters minimum)</label>
+            <input type="password" class="form-control" id="pass" name="pass" placeholder="Enter password" minlength="8"
+                required>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Register" class="btn btn-primary">
+        </div>
+    </form>
+</body>
 </body>
 
 </html>
