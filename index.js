@@ -1,15 +1,29 @@
 const sqlite3 = require('sqlite3').verbose();
 const express = require('express');
-const path = require('path');
-
 const app = express();
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "./public")));
 
-//display interface
-app.get('/', function (req, res) {
-   res.sendFile(path.join(__dirname, './public/index.html'));
-});
+const path = require('path');
+const public = path.join(__dirname,'public');
+app.use(express.static(public));
+
+const mustache = require('mustache-express');
+app.engine('mustache', mustache());
+app.set('view engine', 'mustache');
+
+const router = require('./routes/wellnessAppRoutes');
+app.use('/', router);
+
+
+app.use(function (req, res) {
+   res.status(404);
+   res.send('Oops! We didn\'t find what you are looking for.');
+})
+
+app.listen(3000, () => {
+   console.log('Server started on port 3000. Ctrl^c to quit.');
+})
+/*
 //--------------------------------------------Nutrition Section-----------------------------------------
 // set up nutrition goal database
 let dbng = new sqlite3.Database('./database/nutritionGoals.db', sqlite3.OPEN_READWRITE,
@@ -362,17 +376,4 @@ app.post("/showAllHealthyAchievements", function (req, res) {
 
 //------------------------------------------------------------------------------------------------
 
-
-app.get('/aboutUs.mustache', function (req, res) {
-   res.sendFile(path.join(public, 'aboutUs.mustache'));
-})
-
-
-app.use(function (req, res) {
-   res.status(404);
-   res.send('Oops! We didn\'t find what you are looking for.');
-})
-
-app.listen(3000, () => {
-   console.log('Server started on port 3000. Ctrl^c to quit.');
-})
+*/

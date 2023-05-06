@@ -1,6 +1,6 @@
 const nedb = require('nedb');
 
-class nutritionGoalModel {
+class nutritionGoalsModel {
     constructor(dbFilePath) {
         if (dbFilePath) {
             this.dbng = new nedb({ filename: dbFilePath, autoload: true });
@@ -80,4 +80,4 @@ class nutritionGoalModel {
 
 
 }
-module.exports = nutritionGoalModel;
+module.exports = nutritionGoalsModel;
