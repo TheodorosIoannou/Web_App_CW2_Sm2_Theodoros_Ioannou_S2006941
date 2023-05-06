@@ -11,9 +11,9 @@ class fitnessGoalsModel {
     }
 
     //add Fitness Goal
-    addFitnessGoal(id, exercisename, startDate, endDate) {
+    addFitnessGoal(id, exercisename, reps, sets, startDate, endDate) {
         return new Promise((resolve, reject) => {
-          this.dbfg.insert({ id: id, exercisename: exercisename, startDate: startDate, endDate: endDate} , function (err, docs) {
+          this.dbfg.insert({ id: id, exercisename: exercisename, reps: reps, sets: sets, startDate: startDate, endDate: endDate} , function (err, docs) {
             if (err) {
               reject(err);
               console.log("error", err);

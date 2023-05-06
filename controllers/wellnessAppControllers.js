@@ -20,15 +20,15 @@ const dbfg = new fitnessGoalsModel("fitnessGoals.db");
 ////////////show all
 exports.showAllNutritionGoals_page = function (req, res) {
     dbng.showAllNutritionGoals().then((docs) => {
-      res.render("nutritionGoalsdata", {
+      res.render("nutrition/nutritionGoalsData", {
         goal: docs,
       });
     });
   };
 
   exports.showAllFitnessGoals_page = function (req, res) {
-    dbfg.showAllFitnessGoals.then((docs) => {
-      res.render("fitnessGoalsdata", {
+    dbfg.showAllFitnessGoals().then((docs) => {
+      res.render("fitness/fitnessGoalsData", {
         goal: docs,
       });
     });
@@ -36,7 +36,7 @@ exports.showAllNutritionGoals_page = function (req, res) {
 
   exports.showAllHealthyLifestyleGoals_page = function (req, res) {
     dbhg.showAllHealthyLifestyleGoals().then((docs) => {
-      res.render("HealthyLifestyleGoalsdata", {
+      res.render("healthyLifestyle/healthyLifestyleGoalData", {
         goal: docs,
       });
     });
@@ -45,24 +45,24 @@ exports.showAllNutritionGoals_page = function (req, res) {
 
   exports.showAllNutritionAchievements_page = function (req, res) {
     dbna.showAllNutritionAchievements().then((docs) => {
-      res.render("nutritionAchievementsdata", {
-        goal: docs,
+      res.render("nutrition/nutritionAchievementData", {
+        achievement: docs,
       });
     });
   };
 
   exports.showAllFitnessAchievements_page = function (req, res) {
-    dbfa.showAllfitnessAchievements.then((docs) => {
-      res.render("fitnessAchievementsdata", {
-        goal: docs,
+    dbfa.showAllfitnessAchievements().then((docs) => {
+      res.render("fitness/fitnessAchievementsData", {
+        achievement: docs,
       });
     });
   };
 
   exports.showAllHealthyLifestyleAchievements_page = function (req, res) {
-    dbhg.showAllHealthyLifestyleAchievements().then((docs) => {
-      res.render("HealthyLifestyleAchievementsdata", {
-        goal: docs,
+    dbha.showAllHealthyLifestyleAchievements().then((docs) => {
+      res.render("healthyLifestyle/HealthyLifestyleAchievementsdata", {
+        achievement: docs,
       });
     });
   };  
@@ -71,54 +71,54 @@ exports.showAllNutritionGoals_page = function (req, res) {
 
 exports.addNutritionGoal_route = function (req, res) {
   dbng.addNutritionGoal(req.body.id, req.body.maxkcal, req.body.startDate, req.body.endDate).then((docs) => {
-    res.render("addNutritionGoal", {
-      change: " added to database",
-      employee: docs,
+    res.render("nutrition/addNutritionGoal", {
+      change: " added",
+      goal: docs,
     });
   });
 };
 
 exports.addFitnessGoal_route = function (req, res) {
-    dbfg.addFitnessGoal(req.body.id, req.body.exercisename, req.body.startDate, req.body.endDate).then((docs) => {
-      res.render("addFitnessGoal", {
-        change: " added to database",
-        employee: docs,
+    dbfg.addFitnessGoal(req.body.id, req.body.exercisename, req.body.reps, req.body.sets, req.body.startDate, req.body.endDate).then((docs) => {
+      res.render("fitness/addFitnessGoal", {
+        change: " added ",
+        goal: docs,
       });
     });
   };
   
   exports.addHealthyLifestyleGoal_route = function (req, res) {
     dbhg.addHealthyLifestyleGoal(req.body.id, req.body.hoursofsleep, req.body.startDate, req.body.endDate).then((docs) => {
-      res.render("HealthyLifestyleGoalChange", {
-        change: " added to database",
-        employee: docs,
+      res.render("healthyLifestyle/addHealthLifestyleGoal", {
+        change: " added",
+        goal: docs,
       });
     });
   };
   
   exports.addFitnessAchievement_route = function (req, res) {
     dbfa.addfitnessAchievement(req.body.name).then((docs) => {
-      res.render("fitnessAchievementChange", {
-        change: " added to database",
-        employee: docs,
+      res.render("fitness/addFitnessAchievement", {
+        change: " added",
+        achievement: docs,
       });
     });
   };
 
   exports.addhealthyLifestyleAchievement_route = function (req, res) {
     dbha.addhealthyLifestyleAchievement(req.body.name).then((docs) => {
-      res.render("healthyLifestyleAchievementChange", {
+      res.render("healthyLifestyle/addHealthyLifestyleAchievement", {
         change: " added to database",
-        employee: docs,
+        achievement: docs,
       });
     });
   };
   
   exports.addNutritionAchievement_route = function (req, res) {
     dbna.addNutritionAchievement(req.body.name).then((docs) => {
-      res.render("NutritionAchievementChange", {
-        change: " added to database",
-        employee: docs,
+      res.render("nutrition/addNutritionAchievement", {
+        change: " added",
+        achievement: docs,
       });
     });
   };
@@ -126,9 +126,9 @@ exports.addFitnessGoal_route = function (req, res) {
 exports.deleteNutritionGoals_route = function (req, res) {
     let id = req.body.id;
     dbng.deleteNutritionGoals(id).then((docs) => {
-      res.render("nutrionGoalChange", {
-        change: " added to database",
-        employee: docs,
+      res.render("nutrition/deleteNutritionGoal", {
+        change: " deleted",
+        goal: docs,
       });
     });
   };
@@ -136,9 +136,9 @@ exports.deleteNutritionGoals_route = function (req, res) {
   exports.deleteFitnessGoals_route = function (req, res) {
     let id = req.body.id;
       dbfg.deleteFitnessGoals(id).then((docs) => {
-        res.render("fitnessGoalChange", {
-          change: " added to database",
-          employee: docs,
+        res.render("fitness/deleteFitnessGoal", {
+          change: " deleted",
+          goal: docs,
         });
       });
     };
@@ -146,9 +146,9 @@ exports.deleteNutritionGoals_route = function (req, res) {
     exports.deleteHealthyLifestyleGoals_route = function (req, res) {
         let id = req.body.id;
       dbhg.deleteHealthyLifestyleGoals(id).then((docs) => {
-        res.render("HealthyLifestyleGoalChange", {
-          change: " added to database",
-          employee: docs,
+        res.render("healthyLifestyle/deleteHealthyLifestyleGoals", {
+          change: " deleted ",
+          goal: docs,
         });
       });
     };
@@ -162,9 +162,8 @@ exports.updateNutritionGoal_route = function (req, res) {
   let endDate = req.body.endDate;
   dbng.updateNutritionGoal(id, maxkcal, startDate, endDate)
     .then((docs) => {
-      res.render("nutritionGoalChange", {
-        title:"UpdatesNutritionGoal",
-        change: "nutrition goal updated",
+      res.render("nutrition/updateNutritionGoal", {
+        change: "updated",
         employees: docs,
       });
     })
@@ -184,10 +183,9 @@ exports.updateFitnessGoal_route = function (req, res) {
 
     dbfg.updateFitnessGoal(id, exercisename, reps , sets, startDate, endDate)
       .then((docs) => {
-        res.render("fitnessGoalChange", {
-          title:"UpdatesfitnessGoal",
-          change: "fitness goal updated",
-          employees: docs,
+        res.render("fitness/updateFitnessGoal", {
+          change: "updated",
+          goal: docs,
         });
       })
       .catch((err) => {
@@ -203,9 +201,8 @@ exports.updateFitnessGoal_route = function (req, res) {
     let endDate = req.body.endDate;
     dbhg.updateHealthyLifestyleGoal(id, hoursofsleep, startDate, endDate)
       .then((docs) => {
-        res.render("HealthyLifestyleGoalChange", {
-          title:"UpdatesHealthyLifestyleGoal",
-          change: "HealthyLifestyle goal updated",
+        res.render("healthyLifestyle/updateHealthyLifestyleGoal", {
+          change: "updated",
           employees: docs,
         });
       })

@@ -27,7 +27,7 @@ class healthyLifestyleAchievementsModel {
 
     
     //show all healthyLifestyle achievements
-    showAllhealthyLifestyleAchievements() {
+    showAllHealthyLifestyleAchievements() {
         return new Promise((resolve, reject) => {
             this.dbha.find({}, function (err, docs) {
                 if (err) {
@@ -40,7 +40,7 @@ class healthyLifestyleAchievementsModel {
             });
         });
     }
-
+   
 
 }
 module.exports = healthyLifestyleAchievementsModel;

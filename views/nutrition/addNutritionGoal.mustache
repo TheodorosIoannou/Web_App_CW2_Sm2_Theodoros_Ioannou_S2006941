@@ -1,23 +1,18 @@
-<!DOCTYPE html>
-<html>{{>index}}
-    <head>
-Add Nutrition Personal Goal</head>
-<form action="/nutrition" method="get" style="color: white;">
-    <fieldset>
-    <label for="id">id:</label>
-    <input type="text" id="id" name="id">
+<html>
 
-    <label for="max-kcal">Max Kcal:</label>
-    <input type="text" id="max-kcal" name="max-kcal">
+<head>
+    {{>index}}
+</head>
 
-    <label for="start-date">Start Date:</label>
-    <input type="date" id="start-date" name="start-date">
+<body>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Nutrition goal {{change}}</h4>
+        </div>
+    </div>
 
-    <label for="end-date">End Date:</label>
-    <input type="date" id="end-date" name="end-date">
+    </div>
+    </div>
+</body>
 
-    <button type="submit" id="add-nutrition-personal-goal-button"
-        style="color: white; background-color: rgb(77, 77, 77);  ">+Add</button>
- 
-    </form>
 </html>

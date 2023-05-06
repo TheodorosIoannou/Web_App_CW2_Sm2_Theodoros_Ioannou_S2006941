@@ -13,7 +13,7 @@ class nutritionGoalsModel {
     //add nutrition Goal
     addNutritionGoal(id, maxkcal, startDate, endDate) {
     return new Promise((resolve, reject) => {
-      this.dbng.insert({ id: id, maxkcal: maxkcal, stardDate: startDate, endDate: endDate} , function (err, docs) {
+      this.dbng.insert({ id: id, maxkcal: maxkcal, startDate: startDate, endDate: endDate} , function (err, docs) {
         if (err) {
           reject(err);
           console.log("error", err);
@@ -31,7 +31,7 @@ class nutritionGoalsModel {
         return new Promise((resolve, reject) => {
             this.dbng.update(
                 { id: id },
-                { $set: { maxkcal: maxkcal, stardDate: startDate, endDate: endDate } },
+                { $set: { maxkcal: maxkcal, startDate: startDate, endDate: endDate } },
                 {},
                 function (err, docs) {
                     if (err) {
@@ -63,7 +63,7 @@ class nutritionGoalsModel {
     }
 
 
-    //show nutrition Goal
+    //show ALL nutrition Goals
     showAllNutritionGoals() {
         return new Promise((resolve, reject) => {
             this.dbng.find({}, function (err, docs) {
