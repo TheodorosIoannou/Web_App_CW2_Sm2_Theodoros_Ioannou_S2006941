@@ -11,9 +11,9 @@ class fitnessGoalsModel {
     }
 
     //add Fitness Goal
-    addFitnessGoal(id, exercisename, stardDate, endDate) {
+    addFitnessGoal(id, exercisename, startDate, endDate) {
         return new Promise((resolve, reject) => {
-          this.dbfg.insert({ id: id, exercisename: exercisename, stardDate: stardDate, endDate: endDate,} , function (err, docs) {
+          this.dbfg.insert({ id: id, exercisename: exercisename, startDate: startDate, endDate: endDate} , function (err, docs) {
             if (err) {
               reject(err);
               console.log("error", err);
@@ -30,7 +30,7 @@ class fitnessGoalsModel {
         return new Promise((resolve, reject) => {
             this.dbfg.update(
                 { id: id },
-                { $set: { exercisename: exercisename, reps: reps, sets: sets, stardDate: startDate, endDate: endDate } },
+                { $set: { exercisename: exercisename, reps: reps, sets: sets, startDate: startDate, endDate: endDate } },
                 {},
                 function (err, docs) {
                     if (err) {

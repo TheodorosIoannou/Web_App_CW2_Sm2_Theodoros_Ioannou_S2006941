@@ -70,8 +70,8 @@ exports.showAllNutritionGoals_page = function (req, res) {
   ///////////////Add
 
 exports.addNutritionGoal_route = function (req, res) {
-  dbng.addNutritionGoal(req.body.id, req.body.maxKcal, req.body.stardDate, req.body.endDate).then((docs) => {
-    res.render("nutrionGoalChange", {
+  dbng.addNutritionGoal(req.body.id, req.body.maxkcal, req.body.startDate, req.body.endDate).then((docs) => {
+    res.render("addNutritionGoal", {
       change: " added to database",
       employee: docs,
     });
@@ -79,8 +79,8 @@ exports.addNutritionGoal_route = function (req, res) {
 };
 
 exports.addFitnessGoal_route = function (req, res) {
-    dbfg.addFitnessGoal(req.body.id, req.body.exercisename, req.body.stardDate, req.body.endDate).then((docs) => {
-      res.render("fitnessGoalChange", {
+    dbfg.addFitnessGoal(req.body.id, req.body.exercisename, req.body.startDate, req.body.endDate).then((docs) => {
+      res.render("addFitnessGoal", {
         change: " added to database",
         employee: docs,
       });
@@ -88,7 +88,7 @@ exports.addFitnessGoal_route = function (req, res) {
   };
   
   exports.addHealthyLifestyleGoal_route = function (req, res) {
-    dbhg.addHealthyLifestyleGoal(req.body.id, req.body.hoursofsleep, req.body.stardDate, req.body.endDate).then((docs) => {
+    dbhg.addHealthyLifestyleGoal(req.body.id, req.body.hoursofsleep, req.body.startDate, req.body.endDate).then((docs) => {
       res.render("HealthyLifestyleGoalChange", {
         change: " added to database",
         employee: docs,
@@ -115,7 +115,7 @@ exports.addFitnessGoal_route = function (req, res) {
   };
   
   exports.addNutritionAchievement_route = function (req, res) {
-    dbfa.addNutritionAchievement(req.body.name).then((docs) => {
+    dbna.addNutritionAchievement(req.body.name).then((docs) => {
       res.render("NutritionAchievementChange", {
         change: " added to database",
         employee: docs,
@@ -157,10 +157,10 @@ exports.deleteNutritionGoals_route = function (req, res) {
 
 exports.updateNutritionGoal_route = function (req, res) {
   let id = req.body.id;
-  let maxKcal = req.body.maxKcal;
-  let stardDate = req.body.stardDate;
+  let maxkcal = req.body.maxkcal;
+  let startDate = req.body.startDate;
   let endDate = req.body.endDate;
-  dbng.updateNutritionGoal(id, maxKcal, stardDate, endDate)
+  dbng.updateNutritionGoal(id, maxkcal, startDate, endDate)
     .then((docs) => {
       res.render("nutritionGoalChange", {
         title:"UpdatesNutritionGoal",
@@ -176,12 +176,13 @@ exports.updateNutritionGoal_route = function (req, res) {
 
 exports.updateFitnessGoal_route = function (req, res) {
     let id = req.body.id;
-    let maxKcal = req.body.maxKcal;
+    let exercisename = req.body.exercisename;
     let reps = req.body.reps;
     let sets = req.body.sets;
-    let stardDate = req.body.stardDate;
+    let startDate = req.body.startDate;
     let endDate = req.body.endDate;
-    dbfg.updateFitnessGoal(id, maxKcal, reps , sets, stardDate, endDate)
+
+    dbfg.updateFitnessGoal(id, exercisename, reps , sets, startDate, endDate)
       .then((docs) => {
         res.render("fitnessGoalChange", {
           title:"UpdatesfitnessGoal",
@@ -198,9 +199,9 @@ exports.updateFitnessGoal_route = function (req, res) {
   exports.updateHealthyLifestyleGoal_route = function (req, res) {
     let id = req.body.id;
     let hoursofsleep = req.body.hoursofsleep;
-    let stardDate = req.body.stardDate;
+    let startDate = req.body.startDate;
     let endDate = req.body.endDate;
-    dbhg.updateHealthyLifestyleGoal(id, hoursofsleep, stardDate, endDate)
+    dbhg.updateHealthyLifestyleGoal(id, hoursofsleep, startDate, endDate)
       .then((docs) => {
         res.render("HealthyLifestyleGoalChange", {
           title:"UpdatesHealthyLifestyleGoal",

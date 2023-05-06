@@ -11,9 +11,9 @@ class healthyLifestyleGoalsModel {
     }
 
     //add HealthyLifestyle Goal
-    addHealthyLifestyleGoal(id, hoursofsleep, stardDate, endDate) {
+    addHealthyLifestyleGoal(id, hoursofsleep, startDate, endDate) {
         return new Promise((resolve, reject) => {
-          this.dbhg.insert({ id: id, hoursofsleep: hoursofsleep, stardDate: stardDate, endDate: endDate,} , function (err, docs) {
+          this.dbhg.insert({ id: id, hoursofsleep: hoursofsleep, startDate: startDate, endDate: endDate,} , function (err, docs) {
             if (err) {
               reject(err);
               console.log("error", err);
@@ -26,11 +26,11 @@ class healthyLifestyleGoalsModel {
       }
 
     //update healthyLifestyle Goal
-    updateHealthyLifestyleGoal(id, hoursofsleep, stardDate, endDate) {
+    updateHealthyLifestyleGoal(id, hoursofsleep, startDate, endDate) {
         return new Promise((resolve, reject) => {
             this.dbhg.update(
                 { id: id },
-                { $set: { hoursofsleep: hoursofsleep, stardDate: stardDate, endDate: endDate } },
+                { $set: { hoursofsleep: hoursofsleep, stardDate: startDate, endDate: endDate } },
                 {},
                 function (err, docs) {
                     if (err) {
