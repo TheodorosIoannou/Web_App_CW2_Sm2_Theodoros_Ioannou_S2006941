@@ -164,7 +164,7 @@ exports.updateNutritionGoal_route = function (req, res) {
     .then((docs) => {
       res.render("nutrition/updateNutritionGoal", {
         change: "updated",
-        employees: docs,
+        goal: docs,
       });
     })
     .catch((err) => {
@@ -203,7 +203,7 @@ exports.updateFitnessGoal_route = function (req, res) {
       .then((docs) => {
         res.render("healthyLifestyle/updateHealthyLifestyleGoal", {
           change: "updated",
-          employees: docs,
+          goal: docs,
         });
       })
       .catch((err) => {
