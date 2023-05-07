@@ -223,7 +223,7 @@ exports.landing_page = function (req, res) {
     );
 }
 
-exports.login_page = function(req, res) {
+exports.login = function(req, res) {
     res.render("user/login",
         {
         'title': 'Login'
@@ -231,16 +231,16 @@ exports.login_page = function(req, res) {
         );
 }
 
-exports.register_page = function (req, res) {
-    res.render("user/register.mustache",
+exports.register = function (req, res) {
+    res.render("user/register",
         {
             'title': 'Register'
         }
     );
 }
 
-exports.aboutUs_page = function (req, res) {
-    res.render("user/aboutUs.mustache",
+exports.aboutUs = function (req, res) {
+    res.render("user/aboutUs",
         {
             'title': 'About Us'
         }

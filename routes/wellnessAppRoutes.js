@@ -21,9 +21,9 @@ router.post("/updateNutritionGoal_route", controller.updateNutritionGoal_route);
 router.post("/updateFitnessGoal_route", controller.updateFitnessGoal_route);
 router.post("/updateHealthyLifestyleGoal_route", controller.updateHealthyLifestyleGoal_route);
 router.get("/", controller.landing_page);
-router.get("/login_page", controller.login_page);
-router.get("/register_page", controller.register_page);
-router.get("/aboutUs_page", controller.aboutUs_page);
+router.get("/login", controller.login);
+router.get("/register", controller.register);
+router.get("/aboutUs", controller.aboutUs);
 
 
 
