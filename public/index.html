@@ -68,7 +68,7 @@
                         <h2>Personal Goals</h2>
 
                         <!--Here adding a new nutrition goal-->
-                        <form action="/addNutritionGoals" method="POST">
+                        <form action="/addNutritionGoal_route" method="POST">
                             <fieldset>
                                 <h3>Add a new Nutrtition Goal</h3>
                                 <label>Goal id</label>
@@ -90,7 +90,7 @@
                         </form>
 
                         <!--Here editing the Nutrition Goal-->
-                        <form action="/updateNutritionGoals" method="POST">
+                        <form action="/updateNutritionGoal_route" method="POST">
                         <fieldset>
                             <h3>Edit Nutrtition Goal</h3>
                             <label>Goal id</label>
@@ -113,7 +113,7 @@
 
 
                         <!--Here deleting the Nutrition Goal-->
-                        <form action="/deleteNutritionGoals" method="POST">
+                        <form action="/deleteNutritionGoals_route" method="POST">
                             <fieldset>
                                 <h3>Delete Nutrtition Goal</h3>
                                 <label>Goal id</label>
@@ -127,7 +127,7 @@
                         </form>
 
                         <!-- Here showing all the nutrition goals -->
-                                <form action="/showAllNutritionGoals" method="POST">
+                                <form action="/showAllNutritionGoals_page" method="GET">
                             <fieldset>
                                 <button class="btn btn-primary" type="submit">Show All Goals</button>
                                 <br><br><br>
@@ -137,7 +137,7 @@
                             <div class="nutrition-achievements-box "
                                 style="background-color: rgb(255, 89, 0);   color: white;">
                                 <!-- Here adding a new nutrition achievement--> 
-                                <form action="/addNutritionAchievement" method="POST">   
+                                <form action="/addNutritionAchievement_route" method="POST">   
                                 <fieldset>                               
                                 <h3>Add a new nutrition achievement</h3>
                                         <label>Name</label>
@@ -149,7 +149,7 @@
 
                                 <!--here showing all nutrition achievements-->
 
-                                <form action="/showAllNutritionAchievements" method="POST">
+                                <form action="/showAllNutritionAchievements_page" method="GET">
                                 <fieldset>
                                     <button class="btn btn-primary" type="submit">Show All Achievements</button>
                                     <br><br><br>
@@ -171,7 +171,7 @@
                         <h2>Personal Goals</h2>
 
                         <!--Here adding a new fitness goal-->
-                        <form action="/addFitnessGoals" method="POST">
+                        <form action="/addFitnessGoal_route" method="POST">
                             <fieldset>
                                 <h3>Edit Fitness Goal</h3>
                                 <label>Goal id</label>
@@ -199,7 +199,7 @@
                         </form>
 
                         <!--Here editing the Nutrition Goal-->
-                        <form action="/updateFitnessGoals" method="POST">
+                        <form action="/updateFitnessGoal_route" method="POST">
                             <fieldset>
                                 <h3>Edit Fitness Goal</h3>
                                 <label>Goal id</label>
@@ -227,7 +227,7 @@
 
 
                         <!--Here deleting the Fitness Goal-->
-                        <form action="/deleteFitnessGoals" method="POST">
+                        <form action="/deleteFitnessGoals_route" method="POST">
                             <fieldset>
                                 <h3>Delete Fitness Goal</h3>
                                 <label>Goal id</label>
@@ -241,7 +241,7 @@
                         </form>
 
                         <!-- Here showing all the fitness goals -->
-                                <form action="/showAllFitnessGoals" method="POST">
+                                <form action="/showAllFitnessGoals_page" method="GET">
                             <fieldset>
                                 <button class="btn btn-primary" type="submit">Show All Goals</button>
                                 <br><br><br>
@@ -251,7 +251,7 @@
                             <div class="fitness-achievements-box "
                                 style="background-color: rgb(66, 0, 189);   color: white;">
                                 <!-- Here adding a new fitness achievement--> 
-                                <form action="/addFitnessAchievement" method="POST">   
+                                <form action="/addFitnessAchievement_route" method="POST">   
                                 <fieldset>                               
                                 <h3>Add a new fitness achievement</h3>
                                         <label>Name</label>
@@ -263,7 +263,7 @@
 
                                 <!--here showing all fitness achievements-->
 
-                                <form action="/showAllFitnessAchievements" method="POST">
+                                <form action="/showAllFitnessAchievements_page" method="GET">
                                 <fieldset>
                                     <button class="btn btn-primary" type="submit">Show All Achievements</button>
                                     <br><br><br>
@@ -283,7 +283,7 @@
                         <h2>Personal Goals</h2>
 
                         <!--Here adding a new Healthy Lifestyle goal-->
-                        <form action="/addHealthyGoals" method="POST">
+                        <form action="/addHealthyLifestyleGoal_route" method="POST">
                             <fieldset>
                                 <h3>Edit Healthy Lifestyle Goal</h3>
                                 <label>Goal id</label>
@@ -305,7 +305,7 @@
                         </form>
 
                         <!--Here editing the Healthy Lifestyle Goal-->
-                        <form action="/updateHealthyGoals" method="POST">
+                        <form action="/updateHealthyLifestyleGoal_route" method="POST">
                             <fieldset>
                                 <h3>Edit Healthy Lifestyle Goal</h3>
                                 <label>Goal id</label>
@@ -328,7 +328,7 @@
 
 
                         <!--Here deleting the Healthy Lifestyle Goal-->
-                        <form action="/deleteHealthyGoals" method="POST">
+                        <form action="/deleteHealthyLifestyleGoals_route" method="POST">
                             <fieldset>
                                 <h3>Delete Healthy Lifestyle Goal</h3>
                                 <label>Goal id</label>
@@ -342,7 +342,7 @@
                         </form>
 
                         <!-- Here showing all the Healthy Lifestyle goals -->
-                                <form action="/showAllHealthyGoals" method="POST">
+                                <form action="/showAllHealthyLifestyleGoals_page" method="GET">
                             <fieldset>
                                 <button class="btn btn-primary" type="submit">Show All Goals</button>
                                 <br><br><br>
@@ -352,7 +352,7 @@
                             <div class="fitness-achievements-box"
                                 style="background-color: rgb(14, 87, 0);   color: white;">
                                 <!-- Here adding a new Healthy Lifestyle achievement-->
-                                <form action="/addHealthyAchievement" method="POST">   
+                                <form action="/addhealthyLifestyleAchievement_route" method="POST">   
                                 <fieldset>                               
                                 <h3>Add a new Healthy Lifestyle achievement</h3>
                                         <label>Name</label>
@@ -364,7 +364,7 @@
 
                                 <!--here showing all Healthy Lifestyle achievements-->
 
-                                <form action="/showAllHealthyAchievements" method="POST">
+                                <form action="/showAllHealthyLifestyleAchievements_page" method="GET">
                                 <fieldset>
                                     <button class="btn btn-primary" type="submit">Show All Achievements</button>
                                     <br><br><br>

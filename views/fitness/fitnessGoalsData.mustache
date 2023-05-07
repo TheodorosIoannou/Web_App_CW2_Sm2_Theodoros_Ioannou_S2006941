@@ -1,0 +1,34 @@
+<html>
+
+<head>
+  {{>index}}
+</head>
+
+<body>
+    {{#goal}}
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Fitness Goal</h4>
+            <p class="card-text">
+                id :{{id}}
+            </p>
+            <p class="card-text">
+                exercisename :{{exercisename}}
+            </p>
+            <p class="card-text">
+                reps :{{reps}}            </p>
+                <p class="card-text">
+                    sets :{{sets}}
+                </p>
+            <p class="card-text">
+                startDate :{{startDate}}
+            </p>
+            <p class="card-text">
+                endDate: {{endDate}}
+            </p>
+        </div>
+    </div>
+    {{/goal}}
+</body>
+
+</html>
