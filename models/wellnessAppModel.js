@@ -1,4 +1,4 @@
-const nedb = require('nedb');
+/*const nedb = require('nedb');
 class wellnessAppModel {
   constructor(dbFilePath) {
     if (dbFilePath) {
@@ -32,4 +32,4 @@ addNutritionGoal(id, maxKcal, stardDate, endDate) {
 
 }
 
-module.exports = wellnessAppModel;
+module.exports = wellnessAppModel;*/

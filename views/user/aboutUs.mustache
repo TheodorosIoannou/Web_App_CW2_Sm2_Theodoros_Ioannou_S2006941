@@ -1,103 +1,32 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
-{{About Us}}
-{{>index}}
-	<style>
-		body {
-			margin: 0;
-			padding: 0;
-		}
-
-		.header {
-			background-color: #7DD601;
-			height: 10%;
-			width: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			padding: 0 0%;
-		}
-
-		.logo {
-			height: 80%;
-		}
-
-		.nav {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			width: 25%;
-			
-		}
-
-		.nav a {
-			color: #fff;
-			text-decoration: none;
-		
-		}
-
-		.about-section {
-			margin-top: 5%;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-
-		.about-image {
-			width: 50%;
-		}
-
-		.about-text {
-			margin-top: 3%;
-			text-align: left;
-			font-size: 120%;
-			color: white;
-			padding: 1%;
-
-		}
-
-		.title {
-			background-color: #457700;
-			color: white;
-			padding: 2%;
-			margin: 0%;
-
-		}
-
-		p.about-text {
-			padding: 0%;
-			margin-left: 1%;
-		}
-
-		.about-box {
-			color: white;
-			background-color: #7DD601;
-			border: 1px solid #ccc;
-			margin: 5%;
-			padding: 0%;
-			margin-left: 10%;
-			margin-right: 10%;
-		}a {
-            color: #fff;
-            text-decoration: none;
-            text-align: center;
-        }
-    </style>
+	{{>index}}
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo">
-            <img src="./images/logo.png" alt="logo">
-               <p> <a href="/aboutUs">Wellness Web App</a></p>
+	<header class="header">
+		<div class="logo">
+			<img src="./images/logo.png" alt="logo">
+			<p> <a href="/aboutUs">Wellness Web App</a></p>
 		</div>
 		<nav class="nav">
-			<a href="/aboutUs">About</a>
-			<a href="/register">Register</a>
-			<a href="/login">Login</a>
+			<div class="text-right" style="margin-bottom: 1em;">
+				{{^user}}
+				<a id="login" href="/login" class="btn btn-primary">
+					Sign in
+				</a>
+				<a id="login" href="/register" class="btn btn-primary">
+					Register
+				</a>
+				{{/user}}
+				{{#user}}
+				<a id="logout" href="/logout" class="btn btn-primary">
+					Sign out
+				</a>
+				{{/user}}
+			</div>
 		</nav>
 	</header>
 	<section class="about-section">
@@ -105,8 +34,10 @@
 		<a>
 			<p class="about-text"></p>
 			<div class="about-box">
-				<h2 class="title">About Us:</h2>
+				
+				<h2 class="title">{{title}}</h2>
 				</p>
+				<a href="/wellnessApp" class="aboutus">
 
 				<p>
 					Wellbeing is fundamental to human health and overall happiness. Having a strong and well-adapted

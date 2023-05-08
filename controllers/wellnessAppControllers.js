@@ -16,7 +16,7 @@ const dbna = new nutritionAchievementsModel("nutritionAchievements.db");
 const fitnessGoalsModel = require('../models/fitnessGoalsModel');
 const dbfg = new fitnessGoalsModel("fitnessGoals.db");
 
-
+const userDao = require('../models/userModel.js');
 ////////////show all
 exports.showAllNutritionGoals_page = function (req, res) {
     dbng.showAllNutritionGoals().then((docs) => {
@@ -216,28 +216,81 @@ exports.updateFitnessGoal_route = function (req, res) {
 
 
 exports.landing_page = function (req, res) {
-    res.render("user/aboutUs.mustache",
-        {
-            'title': 'Landing Page'
-        }
+    res.render("user/aboutUs",
     );
 }
 
-exports.login = function(req, res) {
+exports.show_wellnessApp = function (req, res){
+  res.render("wellnessApp", {
+    'title': 'WellnessApp',
+    'user': 'user'
+    })
+  }
+
+  exports.loggedIn_landing = function (req, res) {
+    res.render("aboutUs", 
+    {
+    title: "WellnessApp",
+    user: "user"
+  })
+}
+
+/*exports.post_wellnessApp = function (req, res) {
+  console.log("processing post-wellnessApp");
+  res.render("/wellnessApp")
+};*/
+
+exports.show_login_page = function(req, res) {
     res.render("user/login",
         {
         'title': 'Login'
         }
         );
 }
+exports.logout= function (req, res) {
+  res
+  .clearCookie("jwt")
+  .status(200)
+  .redirect("/aboutUs");
+  }
+  exports.show_welness_app= function (req, res) {
+    res.render("wellnessApp", {
+      title: "WellnessApp",
+      user: "user"
+    });
+    
+  };
+exports.handle_login = function (req, res) {
+  
+  res.redirect("/wellnessApp")
+};
 
-exports.register = function (req, res) {
+
+exports.show_register_page = function (req, res) {
     res.render("user/register",
-        {
-            'title': 'Register'
-        }
-    );
+    {
+      'title': 'Register'
+      }
+      );
 }
+
+exports.post_new_user = function(req, res) {
+  const user = req.body.username;
+  const password = req.body.pass;
+  if (!user || !password) {
+  res.send(401, 'no user or no password');
+  return;
+  }
+  userDao.lookup(user, function(err, u) {
+    if (u) {
+    res.send(401, "User exists:", user);
+    return;
+    }
+    userDao.create(user, password);
+    console.log("register user", user, "password", password);
+    res.redirect('/login');
+    });
+    }
 
 exports.aboutUs = function (req, res) {
     res.render("user/aboutUs",
@@ -249,37 +302,4 @@ exports.aboutUs = function (req, res) {
 
 
 
-/*exports.nutrition_page = function (req, res) {
-    res.render("nutrition/nutrition.mustache",
-        {
-            'title': 'Nutrition'
-        }
-    );
-}
 
-
-exports.fitness_page = function (req, res) {
-    res.render("fitness/fitness.mustache",
-        {
-            'title': 'Fitness'
-        }
-    );
-}
-
-exports.healthy_lifestyle_page = function (req, res) {
-    res.render("healthy_lifestyle/healthy_lifestyle.mustache",
-        {
-            'title': 'Healthy Lifestyle'
-        }
-    );
-}
-
-
-
-exports.dashboard_page = function (req, res) {
-    res.render("dashboard/dashboard.mustache",
-        {
-            'title': 'Dashboard'
-        }
-    );
-}*/
