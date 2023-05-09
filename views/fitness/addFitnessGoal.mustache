@@ -1,38 +1,17 @@
 <html>
-  <head>
-   {{>index}}
-  </head>
-  <body>
+
+<head>
+  {{>index}}
+</head>
+
+<body>
   <div class="card">
     <div class="card-body">
-          <h4 class="card-title">Fitness goal {{change}}</h4> 
-          {{#goal}}
-          <p class="card-text">
-                id :{{id}} 
+      <h4 class="card-title">Fitness goal {{change}}</h4>
 
-            </p>
-            <p class="card-text">
-                exercisename :{{exercisename}}
-            </p>
-            <p class="card-text">
-              reps :{{reps}}
-          </p>
-          <p class="card-text">
-            sets :{{sets}}
-        </p>
-        <p class="card-text">
-          startDate :{{startDate}}
-      </p>
-      <p class="card-text">
-        endDate :{{endDate}}
-    </p>
-          
-            {{/goal}}
 
     </div>
-  </div> 
-  
-    </div>
-  </div> 
-  </body>
+  </div>
+</body>
+
 </html>

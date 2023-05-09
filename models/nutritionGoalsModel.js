@@ -12,18 +12,18 @@ class nutritionGoalsModel {
 
     //add nutrition Goal
     addNutritionGoal(id, maxkcal, startDate, endDate) {
-    return new Promise((resolve, reject) => {
-      this.dbng.insert({ id: id, maxkcal: maxkcal, startDate: startDate, endDate: endDate} , function (err, docs) {
-        if (err) {
-          reject(err);
-          console.log("error", err);
-        } else {
-          resolve(docs);
-          console.log("document inserted", docs);
-        }
-      });
-    });
-  }
+        return new Promise((resolve, reject) => {
+            this.dbng.insert({ id: id, maxkcal: maxkcal, startDate: startDate, endDate: endDate }, function (err, docs) {
+                if (err) {
+                    reject(err);
+                    console.log("error", err);
+                } else {
+                    resolve(docs);
+                    console.log("document inserted", docs);
+                }
+            });
+        });
+    }
 
 
     //update nutrition Goal

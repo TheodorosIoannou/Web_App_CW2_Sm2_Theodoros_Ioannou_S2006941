@@ -13,17 +13,17 @@ class healthyLifestyleGoalsModel {
     //add HealthyLifestyle Goal
     addHealthyLifestyleGoal(id, hoursofsleep, startDate, endDate) {
         return new Promise((resolve, reject) => {
-          this.dbhg.insert({ id: id, hoursofsleep: hoursofsleep, startDate: startDate, endDate: endDate,} , function (err, docs) {
-            if (err) {
-              reject(err);
-              console.log("error", err);
-            } else {
-              resolve(docs);
-              console.log("document inserted", docs);
-            }
-          });
+            this.dbhg.insert({ id: id, hoursofsleep: hoursofsleep, startDate: startDate, endDate: endDate, }, function (err, docs) {
+                if (err) {
+                    reject(err);
+                    console.log("error", err);
+                } else {
+                    resolve(docs);
+                    console.log("document inserted", docs);
+                }
+            });
         });
-      }
+    }
 
     //update healthyLifestyle Goal
     updateHealthyLifestyleGoal(id, hoursofsleep, startDate, endDate) {

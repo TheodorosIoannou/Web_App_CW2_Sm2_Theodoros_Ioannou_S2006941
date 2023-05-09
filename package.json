@@ -21,7 +21,11 @@
   },
   "homepage": "https://github.com/TheodorosIoannou/Web_App_CW2_Sm2_Theodoros_Ioannou_S2006941#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
     "mustache": "^4.2.0",
     "mustache-express": "^1.3.2",
     "nedb": "^1.8.0",
