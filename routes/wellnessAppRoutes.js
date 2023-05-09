@@ -1,16 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/wellnessAppControllers');
-const {login} = require('../auth/auth')
-const {verify} = require('../auth/auth')
+const { login } = require('../auth/auth')
+const { verify } = require('../auth/auth')
 router.get("/aboutUs", controller.aboutUs);
 router.get("/", controller.aboutUs);
 router.get('/login', controller.show_login_page);
 router.post('/login', login, controller.handle_login);
-router.get("/wellnessApp",verify,controller.show_wellnessApp)
-//router.post("/wellnessApp",verify,controller.post_wellnessApp)
-router.get("/logout",verify, controller.logout);
-router.get("/loggedIn",verify, controller.loggedIn_landing);
+router.get("/wellnessApp", verify, controller.show_wellnessApp)
+router.get("/logout", verify, controller.logout);
+router.get("/loggedIn", verify, controller.loggedIn_landing);
 router.get("/wellnessApp/showAllNutritionGoals_page", controller.showAllNutritionGoals_page);
 router.get("/wellnessApp/showAllFitnessGoals_page", controller.showAllFitnessGoals_page);
 router.get("/wellnessApp/showAllHealthyLifestyleGoals_page", controller.showAllHealthyLifestyleGoals_page);
@@ -32,14 +31,4 @@ router.post("/wellnessApp/updateHealthyLifestyleGoal_route", controller.updateHe
 router.get("/register", controller.show_register_page);
 router.post('/register', controller.post_new_user);
 
-
-
-
-/*
-router.get("/nutrition", controller.nutrition_page);
-router.get("/fitness", controller.fitness_page);
-router.get("/healthy_lifestyle", controller.healthy_lifestyle_page);
-router.get("/aboutUs", controller.aboutUs_page);
-router.get("/dashboard", controller.dashboard_page);
-*/
 module.exports = router;

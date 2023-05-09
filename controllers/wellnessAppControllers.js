@@ -233,10 +233,6 @@ exports.loggedIn_landing = function (req, res) {
     })
 }
 
-/*exports.post_wellnessApp = function (req, res) {
-  console.log("processing post-wellnessApp");
-  res.render("/wellnessApp")
-};*/
 
 exports.show_login_page = function (req, res) {
   res.render("user/login",
