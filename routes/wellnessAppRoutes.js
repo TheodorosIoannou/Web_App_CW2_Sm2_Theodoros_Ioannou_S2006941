@@ -7,15 +7,10 @@ router.get("/aboutUs", controller.aboutUs);
 router.get("/", controller.aboutUs);
 router.get('/login', controller.show_login_page);
 router.post('/login', login, controller.handle_login);
-
 router.get("/wellnessApp",verify,controller.show_wellnessApp)
-
 //router.post("/wellnessApp",verify,controller.post_wellnessApp)
-
 router.get("/logout",verify, controller.logout);
 router.get("/loggedIn",verify, controller.loggedIn_landing);
-
-
 router.get("/wellnessApp/showAllNutritionGoals_page", controller.showAllNutritionGoals_page);
 router.get("/wellnessApp/showAllFitnessGoals_page", controller.showAllFitnessGoals_page);
 router.get("/wellnessApp/showAllHealthyLifestyleGoals_page", controller.showAllHealthyLifestyleGoals_page);
@@ -34,8 +29,6 @@ router.post("/wellnessApp/deleteHealthyLifestyleGoals_route", controller.deleteH
 router.post("/wellnessApp/updateNutritionGoal_route", controller.updateNutritionGoal_route);
 router.post("/wellnessApp/updateFitnessGoal_route", controller.updateFitnessGoal_route);
 router.post("/wellnessApp/updateHealthyLifestyleGoal_route", controller.updateHealthyLifestyleGoal_route);
-
-
 router.get("/register", controller.show_register_page);
 router.post('/register', controller.post_new_user);
 
